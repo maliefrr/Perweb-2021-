@@ -19,7 +19,7 @@ include "./controller/connection.php"
 				<li class="navbar"><a href="schedule.php">Jadwal Mata Kuliah</a></li>
 			</ul>
 		</nav>
-    <h2 class="text-center mt-4">Data Mahasiswa</h2>
+    <h2 class="text-center mt-4">Jadwal Kuliah</h2>
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md">
@@ -27,20 +27,22 @@ include "./controller/connection.php"
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">STAMBUK</th>
+                    <th scope="col">Mata Kuliah</th>
+                    <th scope="col">Dosen</th>
+                    <th scope="col">Hari</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $show =  $db -> query("SELECT * FROM tbl_mahasiswa");
+                $show =  $db -> query("SELECT * FROM mata_kuliah");
                 $no = 1;
                 while($t = $show -> fetch_array()){
                     echo "
                     <tr>
                     <th scope='row'>$no</th>
-                    <td>$t[nama]</td>
-                    <td>$t[nim]</td>
+                    <td>$t[nama_matkul]</td>
+                    <td>$t[dosen_pengampu]</td>
+                    <td>$t[jadwal]</td>
                     </tr>
                     ";
                     $no++;
