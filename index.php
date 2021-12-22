@@ -23,12 +23,14 @@ include "./controller/connection.php"
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md">
+            <a href="./tambah.php" class="btn btn-primary">Tambah Data</a>
             <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">STAMBUK</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,6 +43,10 @@ include "./controller/connection.php"
                     <th scope='row'>$no</th>
                     <td>$t[nama]</td>
                     <td>$t[nim]</td>
+                    <td>
+                        <a href='' class='btn btn-primary'>Edit</a>
+                        <a href='' class='btn btn-danger'>Hapus</a></
+                    </td>
                     </tr>
                     ";
                     $no++;
